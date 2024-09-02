@@ -15,7 +15,7 @@ const MyForm: FC<Props> = ({ formID, handleRemove, handleTouchEnded }) => {
   });
 
   const [inputMinute, setInputMinute] = useState<string>(() => {
-    return localStorage.getItem(`savedInputMinute_${formID}`) || "0";
+    return localStorage.getItem(`savedInputMinute_${formID}`) || "30";
   });
 
   const [isFinished, setIsFinished] = useState(false);

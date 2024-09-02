@@ -37,7 +37,7 @@ export const TimerModal: FC<Props> = ({
       <dialog id={formID} className="modal">
         <div className="modal-box">
           <h3 className="font-bold text-lg">{inputValue}</h3>
-          <div className="w-full flex items-center justify-center h-56">
+          <div className="w-full flex items-center justify-center h-56 px10">
             <MyTimer
               initialMinute={Number(inputMinute)}
               isFinished={isFinished}

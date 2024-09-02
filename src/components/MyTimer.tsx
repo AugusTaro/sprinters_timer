@@ -32,7 +32,7 @@ export const MyTimer: FC<Props> = (props) => {
             return prevTotalSeconds - 1;
           });
         }
-      }, 10);
+      }, 1000);
 
       // クリーンアップ関数でインターバルをクリア
       return () => clearInterval(intervalId);

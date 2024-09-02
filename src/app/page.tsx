@@ -97,7 +97,7 @@ const Home = () => {
           <input
             type="text"
             id={`inputField_home`}
-            placeholder="目標を記入!"
+            placeholder="目標を記入"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onBlur={handleBlur}
