@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: "スプリンターズタイマー",
     url: "https://timer.augustaro.com/",
     images: {
-      url: "/images/sprintersTimer.jpg",
+      url: "https://timer.augustaro.com/images/sprintersTimer.jpg",
       type: "image/jpg",
       width: 630,
       height: 630,
