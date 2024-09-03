@@ -18,6 +18,7 @@ export const RangeSlider: FC<Props> = (props) => {
           value={inputMinute}
           onChange={(e) => setInputMinute(e.target.value)}
           onTouchEnd={handleUpdate}
+          onMouseUp={handleUpdate}
           className="range range-accent"
         />
       </div>
