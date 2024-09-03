@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
+    card: "summary",
     title: "スプリンターズタイマー",
     description:
       "スプリントメソッドに基づき、集中するためのタイマーアプリです。ブラウザ上で動作しますが、ダウンロードいただけるより快適にご利用いただけます。",
