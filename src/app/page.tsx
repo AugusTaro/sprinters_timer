@@ -15,10 +15,22 @@ const Home = () => {
   const date = new Date();
   // フォームリストの作成（このコードの理解が乏しい）
   // useStateに関数（初期化関数）を渡すと、その返却値が初期値として設定される。
-  const [formList, setFormList] = useState<string[]>(() => {
+  const [formList, setFormList] = useState<string[]>([]); // 初期値は空の配列
+
+  useEffect(() => {
+    // コンポーネントがマウントされたときにlocalStorageから値を取得
+    const storedValue = localStorage.getItem(`savedInputValue_home`);
+    if (storedValue) {
+      setInputValue(storedValue);
+    }
+
     const storedFormList = localStorage.getItem("formList");
-    return storedFormList ? JSON.parse(storedFormList) : [];
-  });
+    if (storedFormList) {
+      setFormList(JSON.parse(storedFormList));
+    } else {
+      addForm(); // もし保存されたリストがなければ、デフォルトでフォームを1つ追加
+    }
+  }, []);
 
   // タッチエンドイベントを検知するためのステート
   const [touchEnded, setTouchEnded] = useState(false);
@@ -33,22 +45,6 @@ const Home = () => {
       setInputValue(storedValue);
     }
   }, []);
-
-  // コンポーネントマウント時、ストレージに値があればそれでformlistを更新する
-  useEffect(() => {
-    const storedFormList = localStorage.getItem("formList");
-    if (storedFormList) {
-      setFormList(JSON.parse(storedFormList));
-    } else {
-    }
-  }, []);
-
-  // コンポーネントマウント時、ストレージに値がなければ初期化する
-  useEffect(() => {
-    if (formList.length === 0) {
-      addForm(); // フォームが空の場合に1つ追加
-    }
-  }, []); // 初回レンダリング時のみ実行
 
   // フォームを追加する
   const addForm = () => {

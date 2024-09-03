@@ -10,13 +10,26 @@ type Props = {
 };
 
 const MyForm: FC<Props> = ({ formID, handleRemove, handleTouchEnded }) => {
-  const [inputValue, setInputValue] = useState<string>(() => {
-    return localStorage.getItem(`savedInputValue_${formID}`) || "";
-  });
+  const [inputValue, setInputValue] = useState<string>("");
+  const [inputMinute, setInputMinute] = useState<string>("30");
 
-  const [inputMinute, setInputMinute] = useState<string>(() => {
-    return localStorage.getItem(`savedInputMinute_${formID}`) || "30";
-  });
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedInputValue = localStorage.getItem(
+        `savedInputValue_${formID}`
+      );
+      if (storedInputValue) {
+        setInputValue(storedInputValue);
+      }
+
+      const storedInputMinute = localStorage.getItem(
+        `savedInputMinute_${formID}`
+      );
+      if (storedInputMinute) {
+        setInputMinute(storedInputMinute);
+      }
+    }
+  }, [formID]);
 
   const [isFinished, setIsFinished] = useState(false);
 
@@ -27,6 +40,7 @@ const MyForm: FC<Props> = ({ formID, handleRemove, handleTouchEnded }) => {
       (e.target as HTMLInputElement).blur(); // フォーカスを外してキーボードを閉じる
     }
   };
+
   // ストレージに値を保存
   const handleUpdate = () => {
     localStorage.setItem(`savedInputValue_${formID}`, inputValue);
