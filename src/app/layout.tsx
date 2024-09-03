@@ -20,9 +20,9 @@ export const metadata: Metadata = {
     siteName: "スプリンターズタイマー",
     url: "https://timer.augustaro.com/",
     images: {
-      url: "https://timer.augustaro.com/images/sprintersTimer.jpg",
+      url: "https://timer.augustaro.com/images/sprintersTimer2.jpg",
       type: "image/jpg",
-      width: 630,
+      width: 1200,
       height: 630,
       alt: "image",
     },
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
     description:
       "スプリントメソッドに基づき、集中するためのタイマーアプリです。ブラウザ上で動作しますが、ダウンロードいただけるより快適にご利用いただけます。",
     images: {
-      url: "https://timer.augustaro.com/images/sprintersTimer.jpg",
+      url: "https://timer.augustaro.com/images/sprintersTimer2.jpg",
       type: "image/jpg",
-      width: 630,
+      width: 1200,
       height: 630,
       alt: "image",
     },
