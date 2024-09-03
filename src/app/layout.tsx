@@ -27,6 +27,18 @@ export const metadata: Metadata = {
       alt: "image",
     },
   },
+  twitter: {
+    title: "スプリンターズタイマー",
+    description:
+      "スプリントメソッドに基づき、集中するためのタイマーアプリです。ブラウザ上で動作しますが、ダウンロードいただけるより快適にご利用いただけます。",
+    images: {
+      url: "https://timer.augustaro.com/images/sprintersTimer.jpg",
+      type: "image/jpg",
+      width: 630,
+      height: 630,
+      alt: "image",
+    },
+  },
 };
 
 export default function RootLayout({
