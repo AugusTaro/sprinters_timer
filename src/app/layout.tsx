@@ -11,6 +11,22 @@ export const metadata: Metadata = {
     "ブラウザで動作するタイマーアプリです。スプリンターメソッドに基づき集中力を向上させます。",
   icons:
     "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%%22 y=%2250%%22 style=%22dominant-baseline:central;text-anchor:middle;font-size:90px;%22>🔥</text></svg>",
+  keywords: "",
+  openGraph: {
+    type: "website",
+    title: "スプリンターズタイマー",
+    description:
+      "スプリントメソッドに基づき、集中するためのタイマーアプリです。ブラウザ上で動作しますが、ダウンロードいただけるより快適にご利用いただけます。",
+    siteName: "スプリンターズタイマー",
+    url: "https://timer.augustaro.com/",
+    images: {
+      url: "/images/sprintersTimer.jpg",
+      type: "image/jpg",
+      width: 630,
+      height: 630,
+      alt: "image",
+    },
+  },
 };
 
 export default function RootLayout({
@@ -20,9 +36,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <Head>
-        <link rel="icon" />
-      </Head>
       <body className={inter.className}>{children}</body>
     </html>
   );
